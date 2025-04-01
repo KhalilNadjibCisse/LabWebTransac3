@@ -1,0 +1,121 @@
+{
+  "publications": [
+    {
+      "id": "1",
+      "titre": "Les bases de la musique électronique",
+      "auteur": "Jean Dupont",
+      "date": "2025-02-28",
+      "contenu": "Découvrez comment la musique électronique a évolué..."
+    },
+    {
+      "id": "2",
+      "titre": "Le jazz à travers les âges",
+      "auteur": "Sophie Martin",
+      "date": "2025-02-27",
+      "contenu": "Un voyage à travers l’histoire du jazz..."
+    },
+    {
+      "id": "3",
+      "titre": "L'impact du hip-hop sur la culture moderne",
+      "auteur": "David Leroy",
+      "date": "2025-02-26",
+      "contenu": "Le hip-hop est bien plus qu'un simple genre musical..."
+    },
+    {
+      "id": "4",
+      "titre": "La guitare acoustique pour débutants",
+      "auteur": "Alice Durand",
+      "date": "2025-02-25",
+      "contenu": "Apprenez les bases pour bien débuter..."
+    },
+    {
+      "id": "5",
+      "titre": "Les festivals de musique à ne pas manquer",
+      "auteur": "Paul Renaud",
+      "date": "2025-02-24",
+      "contenu": "Une liste des festivals incontournables en 2025..."
+    },
+    {
+      "id": "6",
+      "titre": "Comment composer sa première chanson",
+      "auteur": "Emma Caron",
+      "date": "2025-02-23",
+      "contenu": "Quelques astuces pour écrire des paroles et composer une mélodie..."
+    },
+    {
+      "id": "7",
+      "titre": "Les instruments insolites du monde",
+      "auteur": "Lucas Bernard",
+      "date": "2025-02-22",
+      "contenu": "Découvrez des instruments peu connus mais fascinants..."
+    }
+  ],
+  "commentaires": [
+    {
+      "id": "1",
+      "publicationId": 1,
+      "date": "2025-02-28",
+      "contenu": "Super article, j'adore la musique électronique !"
+    },
+    {
+      "id": "2",
+      "publicationId": 1,
+      "date": "2025-02-28",
+      "contenu": "Merci pour cet article très intéressant !"
+    },
+    {
+      "id": "3",
+      "publicationId": 2,
+      "date": "2025-02-27",
+      "contenu": "Le jazz est un style indémodable."
+    },
+    {
+      "id": "4",
+      "publicationId": 3,
+      "date": "2025-02-26",
+      "contenu": "Le hip-hop a clairement marqué plusieurs générations."
+    },
+    {
+      "id": "5",
+      "publicationId": 4,
+      "date": "2025-02-25",
+      "contenu": "Je vais acheter ma première guitare, merci pour cet article !"
+    },
+    {
+      "id": "6",
+      "publicationId": 5,
+      "date": "2025-02-24",
+      "contenu": "J'attends impatiemment les festivals de cet été !"
+    },
+    {
+      "id": "7",
+      "publicationId": 6,
+      "date": "2025-02-23",
+      "contenu": "J'écris mes premières paroles, super conseils !"
+    },
+    {
+      "id": "8",
+      "publicationId": 7,
+      "date": "2025-02-22",
+      "contenu": "Les instruments traditionnels ont un charme unique."
+    },
+    {
+      "id": "9",
+      "publicationId": 2,
+      "date": "2025-02-27",
+      "contenu": "Merci pour ce voyage musical dans le temps."
+    },
+    {
+      "id": "10",
+      "publicationId": 3,
+      "date": "2025-02-26",
+      "contenu": "Le hip-hop est une culture à part entière."
+    },
+    {
+      "id": "6277",
+      "articleId": "4",
+      "auteur": "Utilisateur",
+      "texte": "rdyuut"
+    }
+  ]
+}

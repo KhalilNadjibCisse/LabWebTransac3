@@ -1,0 +1,65 @@
+// Palette de couleurs
+$primary: #00adb5;
+$secondary: #393e46;
+$background: #eeeeee;
+$text-color: #222831;
+
+
+// Import Bootstrap 
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+
+
+//couleurs et typographies
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $background;
+    color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+}
+
+// Personnalisation du bouton primary
+$theme-colors: (
+  "primary": $primary
+);
+
+
+// Header
+.navbar {
+    background-color: $secondary;
+    .navbar-brand, .nav-link {
+        color: white;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+// Cartes du blog
+.card {
+    border-radius: 10px;
+    .card-title {
+        font-weight: bold;
+    }
+    .btn-primary {
+        background-color: $primary;
+        border-color: darken($primary, 10%);
+        &:hover {
+            background-color: lighten($primary, 10%);
+        }
+    }
+}
+
+// Footer
+footer {
+    background: $secondary;
+    color: white;
+    padding: 20px;
+    a {
+        color: $primary;
+        text-decoration: none;
+    }
+}
