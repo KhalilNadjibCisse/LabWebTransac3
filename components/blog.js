@@ -1,12 +1,9 @@
-import Header from "./header";
-import Footer from "./footer";
-import BlogList from "./blogList";
-
-export default function Blog() {
+function Blog({ id }) {
   return (
     <div>
       <Header />
-      <BlogList />
+      <BlogDetails id={id} />
+      <CommentList articleId={id} />
       <Footer />
     </div>
   );

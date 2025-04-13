@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
-import CommentList from "./commentList";
-import AddComment from "./addComment";
+function BlogDetails({ id }) {
+  const [article, setArticle] = React.useState(null);
 
-export default function BlogDetails() {
-  const [article, setArticle] = useState(null);
-  const params = new URLSearchParams(window.location.search);
-  const articleId = params.get("id");
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/publications/${articleId}`)
+  React.useEffect(() => {
+    fetch(`http://localhost:3000/publications/${id}`)
       .then(response => response.json())
       .then(data => setArticle(data));
-  }, [articleId]);
+  }, [id]);
 
   if (!article) return <div>Loading...</div>;
 
@@ -24,8 +18,8 @@ export default function BlogDetails() {
       <div dangerouslySetInnerHTML={{ __html: `<p>${article.contenu}</p>` }}></div>
 
       <h3 className="mt-5">Commentaires</h3>
-      <AddComment articleId={articleId} />
-      <CommentList articleId={articleId} />
+      <AddComment articleId={id} />
+      <CommentList articleId={id} />
     </div>
   );
 }

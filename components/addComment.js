@@ -1,27 +1,70 @@
-import { useState } from "react";
+function AddComment({ articleId }) {
+  const [author, setAuthor] = React.useState('');
+  const [text, setText] = React.useState('');
 
-export default function AddComment({ articleId }) {
-  const [commentText, setCommentText] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (commentText.trim()) {
-      fetch("http://localhost:3000/commentaires", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ articleId, auteur: "Utilisateur", texte: commentText })
-      }).then(() => {
-        window.location.reload();
-      });
+    // Valider que l'auteur et le texte sont remplis
+    if (!author || !text) {
+      alert("Veuillez remplir tous les champs.");
+      return;
     }
+
+    const newComment = {
+      articleId: articleId,
+      auteur: author,
+      texte: text,
+    };
+
+    // Envoyer les données au serveur via POST
+    fetch("http://localhost:3000/commentaires", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newComment),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Si le commentaire a été ajouté avec succès, réinitialiser les champs
+        setAuthor('');
+        setText('');
+        alert("Commentaire ajouté !");
+      })
+      .catch((error) => {
+        console.error("Erreur lors de l'ajout du commentaire:", error);
+      });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4">
-      <div className="form-group">
-        <textarea className="form-control" rows="4" placeholder="Ajoutez un commentaire..." value={commentText} onChange={(e) => setCommentText(e.target.value)}></textarea>
-      </div>
-      <button type="submit" className="btn btn-primary mt-2">Soumettre</button>
-    </form>
+    <div className="add-comment">
+      <h3>Ajouter un commentaire</h3>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="author" className="form-label">Nom</label>
+          <input
+            type="text"
+            id="author"
+            className="form-control"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="text" className="form-label">Commentaire</label>
+          <textarea
+            id="text"
+            className="form-control"
+            rows="3"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
   );
 }
